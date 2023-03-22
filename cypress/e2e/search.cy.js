@@ -1,5 +1,8 @@
-it(`searching for "javascript" on ${Cypress.env('ENVIRONMENT')} environment returns ${Cypress.env('MAX_RESULTS')} results`, () => {
-  cy.log(`Running against ${Cypress.env('ENVIRONMENT')} environment`)
+const env = Cypress.env('ENVIRONMENT')
+const maxResults = Cypress.env('MAX_RESULTS')
+
+it(`searching for "javascript" on ${env} environment returns ${maxResults} results`, () => {
+  cy.log(`Running against ${env} environment`)
 
   cy.intercept('GET', '**/search**').as('getStories')
   cy.visit('/')
@@ -9,5 +12,5 @@ it(`searching for "javascript" on ${Cypress.env('ENVIRONMENT')} environment retu
 
   cy.get('div span a')
     .its('length')
-    .should('be.equal', Cypress.env('MAX_RESULTS'))
+    .should('be.equal', maxResults)
 })
