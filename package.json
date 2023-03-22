@@ -1,0 +1,21 @@
+{
+  "name": "multiple-environments-with-different-values",
+  "version": "1.0.0",
+  "description": "Sample project to demonstrate how to run Cypress tests on multiple environments using command line envs.",
+  "scripts": {
+    "cy:open:blue": "cypress open --config baseUrl=https://wlsf82-hacker-stories.web.app/ --env ENVIRONMENT=blue,MAX_RESULTS=20",
+    "cy:open:gray": "cypress open --config baseUrl=https://hackernews-seven.vercel.app/ --env ENVIRONMENT=gray,MAX_RESULTS=100",
+    "test:blue": "cypress run --config baseUrl=https://wlsf82-hacker-stories.web.app/ --env ENVIRONMENT=blue,MAX_RESULTS=20",
+    "test:gray": "cypress run --config baseUrl=https://hackernews-seven.vercel.app/ --env ENVIRONMENT=gray,MAX_RESULTS=100"
+  },
+  "keywords": [
+    "cypress.io",
+    "multiple-test-environments",
+    "talking-about-testing"
+  ],
+  "author": "Walmyr Filho <wlsf82@gmail.com> (https://walmyr.dev)",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^12.8.1"
+  }
+}
