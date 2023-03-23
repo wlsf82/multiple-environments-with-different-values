@@ -1,12 +1,13 @@
 const env = Cypress.env('ENVIRONMENT')
-const maxResults = Cypress.env('MAX_RESULTS')
+const maxResults = Cypress.env('MAX_RESULTS_PER_PAGE')
+const termToSearchFor = 'javascript'
 
-it(`searching for "javascript" on ${env} environment returns ${maxResults} results`, () => {
+it(`searching for "${termToSearchFor}" on ${env} environment returns ${maxResults} results`, () => {
   cy.intercept('GET', '**/search**').as('getStories')
   cy.visit('/')
   cy.wait('@getStories')
 
-  cy.search('javascript')
+  cy.search(termToSearchFor)
 
   cy.get('div span a')
     .its('length')
