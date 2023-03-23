@@ -8,6 +8,7 @@ it(`searching for "${termToSearchFor}" on ${env} environment returns ${maxResult
   cy.wait('@getStories')
 
   cy.search(termToSearchFor)
+  cy.wait('@getStories')
 
   cy.get('div span a')
     .its('length')
