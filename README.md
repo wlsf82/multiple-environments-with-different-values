@@ -28,6 +28,10 @@ Run `npm run test:gray` to run the tests in headless mode against the gray envir
 
 Or run `npm run cy:open:gray` to open Cypress in interactive mode and run the tests against the gray environment.
 
+### Both blue and gray
+
+Run `npm test` (or `npm t` for the short version) to run the tests in headless mode against both the blue and gray environments.
+
 ## Support this project
 
 If you want to support this project, leave a ⭐.
