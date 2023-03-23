@@ -6,7 +6,8 @@
     "cy:open:blue": "cypress open --config baseUrl=https://wlsf82-hacker-stories.web.app/ --env ENVIRONMENT=blue,MAX_RESULTS_PER_PAGE=20",
     "cy:open:gray": "cypress open --config baseUrl=https://hackernews-seven.vercel.app/ --env ENVIRONMENT=gray,MAX_RESULTS_PER_PAGE=100",
     "test:blue": "cypress run --config baseUrl=https://wlsf82-hacker-stories.web.app/ --env ENVIRONMENT=blue,MAX_RESULTS_PER_PAGE=20",
-    "test:gray": "cypress run --config baseUrl=https://hackernews-seven.vercel.app/ --env ENVIRONMENT=gray,MAX_RESULTS_PER_PAGE=100"
+    "test:gray": "cypress run --config baseUrl=https://hackernews-seven.vercel.app/ --env ENVIRONMENT=gray,MAX_RESULTS_PER_PAGE=100",
+    "test": "npm run test:blue && npm run test:gray"
   },
   "keywords": [
     "cypress.io",
